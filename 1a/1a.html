@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Fix Start</title>
+<script type = "text/javascript">
+function fixStart(word) {
+    word = word.split('')
+    for(var i = 1; i < word.length; i++)
+        if(word[i] == word[0])
+            word[i] = '*'
+    return word.join('')
+}
+</script>
+</head>
+<body>
+<script>
+var word = prompt("Enter a string: ")
+word = fixStart(word)
+document.write("Modified word: " + word)
+</script>
+</body>
+</html>
