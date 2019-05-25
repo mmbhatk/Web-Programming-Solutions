@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Details</title>
+<script src = "./public/angular/angular.min.js"></script>
+<script type = "text/javascript">
+var app = angular.module("app", [])
+app.controller("emp", function($scope) {
+	$scope.name = "Manasvi"
+	$scope.address = "Bangalore"
+	$scope.company = "Abc"
+
+	$scope.change = function() {
+		$scope.name = "Manu"
+		$scope.address = "USA"
+		$scope.company = "Def"
+	}
+})
+</script>
+</head>
+<body ng-app = "app">
+<div ng-controller = "emp">
+	Name: {{name}}<br>
+	Address: {{address}}<br>
+	Initial Company: {{::company}}<br><br>
+
+	Name: <span ng-bind = "name"></span><br>
+	Address: <span ng-bind = "address"></span><br>
+	<button ng-click = "change()">Change</button>
+</div>
+</body>
+</html>
