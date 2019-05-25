@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>Books</title>
+<script src = "./public/angular/angular.min.js"></script>
+</head>
+<body ng-app = "">
+<select ng-model = "books">
+	<option value = "A">A
+	<option value = "B">B
+</select>
+<div ng-switch = "books">
+	<div ng-switch-when = "A">A is selected.</div>
+	<div ng-switch-when = "B">B is selected.</div>
+</div>
+</body>
+</html>
