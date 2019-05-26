@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Closure</title>
+<script>
+function computeNetPrice(p) {
+	var price = parseFloat(p)
+	function computeTax() {
+		return price * 0.15
+	}
+	return price + computeTax()
+}
+</script>
+</head>
+<body>
+<script>
+var price = computeNetPrice(prompt("Enter produce price: ", 0))
+document.write("Net price: " + price)
+</script>
+</body>
+</html>
