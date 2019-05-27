@@ -21,7 +21,6 @@ mongoClient.connect(url, function(err, db) {
 				console.log("\nStudents with CIE marks less than 20:\n" + JSON.stringify(data))
 				res.send(content + "<h2>Students with CIE marks less than 20</h2>" + JSON.stringify(data))
 			})
-	
 		})
 
 		app.get('/display', function(req, res) {
@@ -31,7 +30,6 @@ mongoClient.connect(url, function(err, db) {
 			})
 		})
 
-
 		app.get('/drop', function(req, res) {
 			db.collection('student').drop()
 			console.log("Collection has been dropped.")
@@ -39,6 +37,5 @@ mongoClient.connect(url, function(err, db) {
 		})
 	}
 })
-
 
 app.listen(5000)

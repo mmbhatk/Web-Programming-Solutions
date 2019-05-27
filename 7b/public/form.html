@@ -13,7 +13,7 @@ app.controller("emp", function($scope, $http) {
 			url: '/insert',
 			data: $scope.data,
 		}).then(function(response) {
-			$scope.response.data=response.data;
+			$scope.response.data = response.data;
 		}, function(error) {
 			console.log(error);
 		})
