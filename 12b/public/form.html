@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Eligibility Test</title>
+<script src = "angular/angular.min.js"></script>
+<script type = "text/javascript">
+var app = angular.module("app", [])
+app.controller("emp", function($scope, $http) {
+	$scope.data = {}
+	$scope.response = {}
+	$scope.send = function() {
+		var posting = $http({
+			method: 'POST',
+			url: '/insert',
+			data: $scope.data,
+		}).then(function(response) {
+			$scope.response.data = response.data
+		}, function(error) {
+			console.log(error)
+		})
+	}
+})
+</script>
+</head>
+<body ng-app = "app">
+<h2>Student Details</h2>
+<form ng-controller = "emp" ng-submit = "send()">
+Name: <input type = "text" ng-model = "data.name"><br>
+Marks: <input type = "text" ng-model = "data.marks"><br>
+<input type = "submit" value = "Submit">
+<div>{{response.data}}</div>
+</form>
+<a href = "/display">List of non-eligible students</a>
+</body>
+</html>
