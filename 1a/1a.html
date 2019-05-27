@@ -14,8 +14,12 @@ function fixStart(word) {
 <body>
 <script>
 var word = prompt("Enter a string: ")
-word = fixStart(word)
-document.write("Modified word: " + word)
+if(word.length > 1)
+{
+    word = fixStart(word)
+    document.write("Modified word: " + word)
+}
+else document.write("String length should be greater than 1.")
 </script>
 </body>
 </html>
