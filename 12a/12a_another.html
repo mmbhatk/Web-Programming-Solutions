@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Promise</title>
+<script>
+function testNum(n) {
+	var promise = new Promise(function(resolve, reject) {
+				n = parseInt(n)
+				if(n < 10) resolve("Lesser than 10.")
+				else if(n > 10) resolve("Greater than 10.")
+				else if(n == 10) resolve("Equal to 10.")
+				else reject("Could not determine.")
+			})
+	return promise
+}
+</script>
+</head>
+<body>
+<script>
+var promise = testNum(prompt("Enter a number: ", 0))
+function something() {
+	document.writeln("Reached here.")
+	setTimeout(function() {
+		document.writeln("Reached here as well.")
+		promise.
+			then(function(message) {
+				document.writeln(message)
+			}).
+			catch(function(message) {
+				document.writeln(message)
+			})
+		}, 5000)
+}
+something()
+document.writeln("Done here.")
+</script>
+</body>
+</html>
